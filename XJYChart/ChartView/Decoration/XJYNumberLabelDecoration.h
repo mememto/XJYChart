@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak) UIView *viewer;
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
 - (instancetype)initWithViewer:(UIView *)viewer;
-- (void)drawWithPoints:(NSArray<NSValue *> *)points TextNumbers:(NSArray<NSNumber *> *)textNumbers isEnableAnimation:(BOOL)isEnableAnimation;
+- (void)drawWithPoints:(NSArray<NSValue *> *)points TextNumbers:(NSArray<NSNumber *> *)textNumbers isEnableAnimation:(BOOL)isEnableAnimation andTotalTeams:(int)totalTeams;
 - (void)removeNumberLabels;
 @end
 

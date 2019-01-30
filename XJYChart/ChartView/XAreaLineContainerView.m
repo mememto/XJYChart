@@ -236,7 +236,7 @@
         [points addObject:[NSValue valueWithCGPoint:obj.graphAnimationEndPoint]];
 
       }];
-      [self.numberLabelDecoration drawWithPoints:points TextNumbers:self.dataItemArray[0].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
+      [self.numberLabelDecoration drawWithPoints:points TextNumbers:self.dataItemArray[0].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation andTotalTeams:self.configuration.totalTeams.intValue];
     } else {
       [self.numberLabelDecoration removeNumberLabels];
     }
@@ -301,7 +301,7 @@
     [points addObject:[NSValue valueWithCGPoint:obj.graphAnimationEndPoint]];
     
   }];
-  [self.numberLabelDecoration drawWithPoints:points TextNumbers:self.dataItemArray[0].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
+  [self.numberLabelDecoration drawWithPoints:points TextNumbers:self.dataItemArray[0].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation andTotalTeams:self.configuration.totalTeams.intValue];
 }
 
 - (void)cleanPreDrawAndDataCache {

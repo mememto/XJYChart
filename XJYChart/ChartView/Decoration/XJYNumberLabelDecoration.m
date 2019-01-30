@@ -19,9 +19,9 @@
   return self;
 }
 
-- (void)drawWithPoints:(NSArray<NSValue *> *)points TextNumbers:(NSArray<NSNumber *> *)textNumbers isEnableAnimation:(BOOL)isEnableAnimation {
-  [points
-   enumerateObjectsUsingBlock:^(
+- (void)drawWithPoints:(NSArray<NSValue *> *)points TextNumbers:(NSArray<NSNumber *> *)textNumbers isEnableAnimation:(BOOL)isEnableAnimation andTotalTeams:(int)totalTeams {
+
+    [points enumerateObjectsUsingBlock:^(
                                 NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
      CGPoint point = obj.CGPointValue;
      XAnimationLabel* label =
@@ -29,10 +29,20 @@
                                    text:@"0"
                               textColor:XJYBlack
                               fillColor:[UIColor clearColor]];
-     int textNum = textNumbers[idx].intValue;
-     [self.labelArray addObject:label];
-     [self.viewer addSubview:label];
-     [label countFromCurrentTo:textNum duration:isEnableAnimation?0.5:0];
+
+        if (totalTeams > 0) {
+
+            int textNum = totalTeams - textNumbers[idx].intValue;
+             [self.labelArray addObject:label];
+             [self.viewer addSubview:label];
+             [label countFromCurrentTo:textNum duration:isEnableAnimation?0.5:0];
+        } else {
+
+            int textNum = textNumbers[idx].intValue;
+            [self.labelArray addObject:label];
+            [self.viewer addSubview:label];
+            [label countFromCurrentTo:textNum duration:isEnableAnimation?0.5:0];
+        }
    }];
 }
 

@@ -159,7 +159,8 @@
   if (!_configuration) {
     
     switch (self.lineGraphMode) {
-      case MutiLineGraph:
+        case MutiLineGraph:
+        case InvertedLineGraph:
         _configuration = [XNormalLineChartConfiguration new];
         break;
       case AreaLineGraph:

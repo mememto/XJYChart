@@ -24,6 +24,8 @@
 /// defalut is [UIColor black75PercentColor]
 @property(nonatomic, strong) UIColor* auxiliaryDashLineColor;
 
+@property(nonatomic, strong) NSNumber *totalTeams;
+
 /// defalut is YES
 @property(nonatomic, assign) BOOL isShowAuxiliaryDashLine;
 

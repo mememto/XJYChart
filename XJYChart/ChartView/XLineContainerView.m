@@ -196,9 +196,8 @@ CGFloat touchLineWidth = 20;
   if (!self.configuration.isEnableNumberLabel) {
     return;
   }
-  
   for (int i = 0; i < self.pointsArrays.count; i++) {
-    [self.numberLabelDecoration drawWithPoints:self.pointsArrays[i] TextNumbers:self.dataItemArray[i].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
+    [self.numberLabelDecoration drawWithPoints:self.pointsArrays[i] TextNumbers:self.dataItemArray[i].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation andTotalTeams:self.configuration.totalTeams.intValue];
   }
 }
 
@@ -405,7 +404,7 @@ CGFloat touchLineWidth = 20;
       [self.shapeLayerArray enumerateObjectsUsingBlock:^(
                                                          CAShapeLayer* _Nonnull obj, NSUInteger idx,
                                                          BOOL* _Nonnull stop) {
-        [self.numberLabelDecoration drawWithPoints:self.pointsArrays[idx] TextNumbers:self.dataItemArray[idx].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
+        [self.numberLabelDecoration drawWithPoints:self.pointsArrays[idx] TextNumbers:self.dataItemArray[idx].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation andTotalTeams:self.configuration.totalTeams.intValue];
       }];
     } else {
       [self.numberLabelDecoration removeNumberLabels];
@@ -462,7 +461,7 @@ CGFloat touchLineWidth = 20;
                                 color:[UIColor tomatoColor]];
           self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
           [self.layer addSublayer:self.coverLayer];
-          [self.numberLabelDecoration drawWithPoints:self.pointsArrays[idx] TextNumbers:self.dataItemArray[idx].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
+          [self.numberLabelDecoration drawWithPoints:self.pointsArrays[idx] TextNumbers:self.dataItemArray[idx].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation andTotalTeams:self.configuration.totalTeams.intValue];
         }
         *stop = YES;
       }

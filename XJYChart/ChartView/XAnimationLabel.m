@@ -22,7 +22,7 @@
 
 @property(nonatomic, strong) CADisplayLink* timer;
 
-@property(nonatomic, assign) CGFloat currentValue;
+@property(nonatomic, assign) int currentValue;
 
 @end
 
@@ -61,7 +61,7 @@
 }
 
 /// Start Animation
-- (void)countFromCurrentTo:(CGFloat)to duration:(CGFloat)duration {
+- (void)countFromCurrentTo:(int)to duration:(CGFloat)duration {
   [self countFrom:self.currentValue to:to duration:duration];
 }
 
@@ -87,11 +87,11 @@
   [self setTextValue:self.currentValue];
 }
 
-- (void)setTextValue:(CGFloat)number {
-  self.text = [NSString stringWithFormat:@"%.1f", number];
+- (void)setTextValue:(int)number {
+  self.text = [NSString stringWithFormat:@"%d", number];
 }
 
-- (void)countFrom:(CGFloat)from to:(CGFloat)to duration:(CGFloat)duration {
+- (void)countFrom:(int)from to:(int)to duration:(CGFloat)duration {
   self.startingValue = from;
   self.destinationValue = to;
 
@@ -114,7 +114,7 @@
 
 #pragma mark Get
 
-- (CGFloat)currentValue {
+- (int)currentValue {
   if (self.progress >= self.totalTime) {
     return self.destinationValue;
   }

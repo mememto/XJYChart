@@ -18,7 +18,7 @@
  @param to End point
  @param duration Animation duration
  */
-- (void)countFromCurrentTo:(CGFloat)to duration:(CGFloat)duration;
+- (void)countFromCurrentTo:(int)to duration:(CGFloat)duration;
 
 /**
  Initialize the XAnimationLabel on the CGPoint Top

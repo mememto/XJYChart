@@ -27,9 +27,9 @@
      XAnimationLabel* label =
      [XAnimationLabel topLabelWithPoint:point
                                    text:@"0"
-                              textColor:[UIColor clearColor]
+                              textColor:XJYBlack
                               fillColor:[UIColor clearColor]];
-     CGFloat textNum = textNumbers[idx].doubleValue;
+     int textNum = textNumbers[idx].intValue;
      [self.labelArray addObject:label];
      [self.viewer addSubview:label];
      [label countFromCurrentTo:textNum duration:isEnableAnimation?0.5:0];
